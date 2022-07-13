@@ -1,4 +1,4 @@
-% A 1-dimensional cellular automata
+% A 1-dimensional cellular automata with 3 colors and radius 1
 
 realtime srand
 /width 500 def
@@ -12,9 +12,9 @@ src width 2 div cvi <000080ff80> putinterval
 %/get3 {dup 1 sub src exch get exch dup src exch get 4 mul exch 1 add src exch get add add 2 div} def
  /get3 {1 sub src exch 3 getinterval 0 exch {add} forall} def
 
-/rule <00ff8000ff00ff> def %1599 0 2 0 2 1 0 2
-%/rule <00808080ff00ff> def %1815 0 2 0 1 1 1 2
-%/rule <0000ff0080ffff> def %2007 0 0 1 2 0 2 2
+ /rule <00ff8000ff00ff> def %Wolfram rule 1599: 0 2 0 2 1 0 2
+%/rule <00808080ff00ff> def %Wolfram rule 1815: 0 2 0 1 1 1 2
+%/rule <0000ff0080ffff> def %Wolfram fule 2007: 0 0 1 2 0 2 2
 
  /newcell {127 div cvi rule exch get} def
 %/newcell {765 exch sub 7 add cvi 768 mod 3 div cvi 255 exch sub} def
