@@ -13,8 +13,8 @@ This makes it a very concise language for implementing chaotic attractors and ot
 
 * **<tt>fern.ps</tt>** The classic Barnsley fractal fern
 * **<tt>1dca.ps</tt>** 1-dimensional cellular automata with a random seed
-* **<tt>LogisticMap*.ps</tt>** Two implementations of the Logistic Map, one zoomed in on the chaotic range 3.0-4.0
-* **<tt>e*.ps</tt>** Chaotic attractors from Clifford Pickover's book "Computers, Pattern, Chaos and Beauty"
+* **<tt>LogisticMap\*.ps</tt>** Two implementations of the Logistic Map, one zoomed in on the chaotic range 3.0-4.0
+* **<tt>e\*.ps</tt>** Chaotic attractors from Clifford Pickover's book "Computers, Pattern, Chaos and Beauty"
 
 ## How to view
 * **MacOS** Just double-click a <tt>ps</tt> file to open it in Preview
