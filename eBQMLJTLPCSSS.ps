@@ -6,21 +6,21 @@
 /yy 0 def
 /xy 0 def
 
-/multiples { /xx x dup mul def /yy y dup mul def /xy x y mul def } bind def
+/multiples { /xx x dup mul def /yy y dup mul def /xy x y mul def } def
 
 /xcoefs { -1.1  0.4  0.0 -0.1 -0.3  0.7 } def
 
 /ycoefs { -0.1  0.3 -1.0  0.6  0.6  0.6 } def
 
-/poly { yy mul exch y mul add exch xy mul add exch xx mul add exch x mul add add } bind def
+/poly { yy mul exch y mul add exch xy mul add exch xx mul add exch x mul add add } def
 
-/iterate { xcoefs poly ycoefs poly /y exch def /x exch def multiples } bind def
+/iterate { xcoefs poly ycoefs poly /y exch def /x exch def multiples } def
 
 380 550 translate
 
 0.5 230 dup dup scale div /point exch def
 
-/plot { x y //point dup rectfill } bind def
+/plot { x y //point dup rectfill } def
 
 100 {iterate} bind repeat 
 10000 {plot iterate} bind repeat

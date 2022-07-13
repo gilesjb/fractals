@@ -7,9 +7,9 @@
 
 /rmax 2 31 exp def
 
-/map {rand rmax div dup .81 lt {pop t0} {dup .90 lt {pop t1} {.99 lt {t2} {t3} ifelse} ifelse} ifelse} bind def
+/map {rand rmax div dup .81 lt {pop t0} {dup .90 lt {pop t1} {.99 lt {t2} {t3} ifelse} ifelse} ifelse} def
 
-/plot {2 copy .001 dup rectfill} bind def
+/plot {2 copy .001 dup rectfill} def
 
 290 50 translate 70 dup scale
 
