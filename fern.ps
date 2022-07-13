@@ -1,0 +1,17 @@
+%! fractal fern
+
+/t0 [ .85 -.04  .04  .85  0  1.6 ] def
+/t1 [ .2   .23 -.26  .22  0  1.24] def
+/t2 [-.15  .26  .28  .24  0  0.44] def
+/t3 [0    0    0     .16  0  0   ] def
+
+/rmax 2 31 exp def
+
+/map {rand rmax div dup .81 lt {pop t0} {dup .90 lt {pop t1} {.99 lt {t2} {t3} ifelse} ifelse} ifelse} bind def
+
+/plot {2 copy .001 dup rectfill} bind def
+
+290 50 translate 70 dup scale
+
+0 0 2000000 {plot map transform} bind repeat
+showpage

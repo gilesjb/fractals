@@ -1,0 +1,29 @@
+realtime srand
+/width 500 def
+/src width string def /dst width string def
+%0 1 width 1 sub {src exch 255 put} for
+ 0 1 width 1 sub {src exch 255 rand and put} for
+src dst copy pop
+
+src width 2 div cvi <000080ff80> putinterval
+
+%/get3 {dup 1 sub src exch get exch dup src exch get 4 mul exch 1 add src exch get add add 2 div} bind def
+ /get3 {1 sub src exch 3 getinterval 0 exch {add} forall} bind def
+
+/rule <00ff8000ff00ff> def %1599 0 2 0 2 1 0 2
+%/rule <00808080ff00ff> def %1815 0 2 0 1 1 1 2
+%/rule <0000ff0080ffff> def %2007 0 0 1 2 0 2 2
+
+ /newcell {127 div cvi rule exch get} bind def
+%/newcell {765 exch sub 7 add cvi 768 mod 3 div cvi 255 exch sub} bind def
+
+/wrap {dst width 1 sub dst 1 get put dst 0 dst width 2 sub get put} bind def
+
+25 215 translate
+563 dup scale
+
+width dup 1.35 mul cvi 8
+[width 0 0 width neg 0 width]
+{1 1 width 2 sub {dst exch dup get3 newcell put} for wrap dst /src dst /dst src def def}
+image
+showpage

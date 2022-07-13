@@ -1,0 +1,7 @@
+/map {dup dup mul sub 1 index mul} bind def
+
+/plot {2 copy 4e-4 13e-5 rectfill} bind def
+
+0.7 0 20 translate dup 600 exch div 750 scale dup 4.0 sub 0 translate 0.5 exch
+dup 4.0 exch sub exch 5000 div 4.0 {exch 100 {map} repeat 300 {plot map} repeat exch pop} bind for
+showpage

@@ -1,0 +1,27 @@
+%! Strange Attractor
+
+/x 0 def
+/y 0 def
+/xx 0 def
+/yy 0 def
+/xy 0 def
+
+/multiples { /xx x dup mul def /yy y dup mul def /xy x y mul def } def
+
+/xcoefs {  0.2  0.8 -0.6 -0.7 -0.3 -0.2 } def
+
+/ycoefs { -0.9 -0.5  0.6 -1.2 -0.3  0.8 } def
+
+/poly { yy mul exch y mul add exch xy mul add exch xx mul add exch x mul add add } def
+
+/iterate { xcoefs poly ycoefs poly /y exch def /x exch def multiples } def
+
+230 470 translate
+
+/point 0.2 300 dup dup scale div def
+
+/plot { x y point dup rectfill } def
+
+100 {iterate} repeat 
+500000 {plot iterate} repeat
+showpage

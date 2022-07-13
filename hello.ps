@@ -1,0 +1,11 @@
+/fontsize 1 def
+/setsize {dup currentfont exch fontsize div scalefont setfont /fontsize exch def} def
+/margin 50 def
+/newline {currentpoint exch pop margin exch fontsize sub moveto} def
+
+/Helvetica findfont setfont
+
+0 800 moveto
+70 setsize
+newline (Hello ) show (world!) show
+40 setsize newline ((that's all for now)) show

@@ -1,0 +1,16 @@
+%! IFS
+/mdef {matrix concatmatrix matrix concatmatrix def} def
+/t0 .9997 dup matrix scale 0 .1 matrix translate -1.4 matrix rotate mdef
+/t1 .02 dup matrix scale 0 0 matrix translate 90 matrix rotate mdef
+/t2 .02 dup matrix scale 0 0 matrix translate -90 matrix rotate mdef
+
+/rmax 2 31 exp def
+
+/map {rand rmax div dup .9995 lt {pop t0} {.99975 lt {t1} {t2} ifelse} ifelse} def
+
+/plot {2 copy .01 dup rectfill} def
+
+20 400 translate 70 dup scale
+
+0 0 200000 {plot map transform} repeat
+showpage
